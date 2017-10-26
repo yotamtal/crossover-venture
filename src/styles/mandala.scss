@@ -1,0 +1,86 @@
+  $mandalaLayers: "#{mandalaLayer}";
+
+  @for $i from 1 through 4 {
+    $className: ".#{$mandalaLayers}#{$i}";
+    $even: #{$i % 2};
+    #{$className} {
+        position: absolute;
+        width: #{300 * $i}px;
+        height: #{300 * $i}px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-style: preserve-3d;
+        @if $i % 2 == 1 {
+            -webkit-animation-name: spin;
+            -moz-animation-name: spin;
+            -ms-animation-name: spin;
+            animation-name: spin;
+          } @else {
+            -webkit-animation-name: spin-backwards;
+            -moz-animation-name: spin-backwards;
+            -ms-animation-name: spin-backwards;
+            animation-name: spin-backwards;
+          }
+        
+        -webkit-animation-duration: 12000ms;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        
+        -moz-animation-duration: 12000ms;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+       
+        -ms-animation-duration: 12000ms;
+        -ms-animation-iteration-count: infinite;
+        -ms-animation-timing-function: linear;
+        
+        animation-duration: 12000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+  }
+
+  $backMandalaLayers: "#{backMandalaLayer}";  
+
+  @for $i from 1 through 3 {
+    $className: ".#{$backMandalaLayers}#{$i}";
+    $even: #{$i % 2};
+    #{$className} {
+        position: absolute;
+        width: #{420 * $i}px;
+        height: #{420 * $i}px;
+        top: 50%;
+        left: 50%;
+        opacity: 0.4;
+        transform: translate(-50%, -50%);
+        transform-style: preserve-3d;
+        @if $i % 2 == 1 {
+            -webkit-animation-name: spin;
+            -moz-animation-name: spin;
+            -ms-animation-name: spin;
+            animation-name: spin;
+          } @else {
+            -webkit-animation-name: spin-backwards;
+            -moz-animation-name: spin-backwards;
+            -ms-animation-name: spin-backwards;
+            animation-name: spin-backwards;
+          }
+        
+        -webkit-animation-duration: 9000ms;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        
+        -moz-animation-duration: 9000ms;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+       
+        -ms-animation-duration: 9000ms;
+        -ms-animation-iteration-count: infinite;
+        -ms-animation-timing-function: linear;
+        
+        animation-duration: 9000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+  }

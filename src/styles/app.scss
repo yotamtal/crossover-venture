@@ -1,0 +1,476 @@
+@import "~normalize.css/normalize.css", "./mandala.scss";
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+#root,
+.wrapper {
+    display: block;
+    height: 100%;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+    color: #fff;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    font-family: "Cerebri Sans", Avenir, Helvetica, Segoe UI, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    height: 100%;
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+
+.animated-page-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 62px;
+    width: 100%;
+    padding: 0 3rem;
+    z-index: 999;
+    a {
+        margin-right: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        &.active {
+            text-decoration: line-through;
+        }
+    }
+}
+
+.page {
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    padding: calc(62px + 3rem) 3rem 3rem 3rem;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+        padding: 0 0 6rem 0;
+        margin: 0;
+        li {
+            display: flex;
+            width: calc(100% / 4 - 2rem);
+            min-height: 200px;
+            margin-bottom: 2rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+            div {
+                display: flex;
+                flex: 1;
+                border: 1px solid white;
+            }
+            a {
+                display: flex;
+                flex: 1;
+                flex-flow: column;
+                padding: 4rem;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                text-decoration: none;
+                color: white;
+                &:hover {
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+    &.home {
+    	h1 {
+    		max-width: 30ch;
+            margin-top: 0;
+    	}
+        a {
+            color: #fff;
+            text-decoration: none;
+            &:hover {
+                text-decoration: line-through;
+            }
+        }
+    }
+    &.projects {
+        flex-flow: row wrap;
+        h1 {
+            margin: 0 0 62px 0;
+        }
+        ul {
+            flex-flow: row wrap;
+        }
+    }
+    &.project-item {
+        h1 {
+            max-width: 35ch;
+        }
+        p {
+            max-width: 75ch;
+        }
+        .goBack {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+    &.missed {
+    	align-items: center;
+    	align-content: center;
+    	justify-content: center;
+    	background: url("rdit.gif") no-repeat;
+    	background-size: cover;
+    	background-position: center center;
+
+    	h1 {
+    		font-size: 20vw;
+    	}
+    }
+}
+
+
+#main-mars {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+  
+#circle1 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 12000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 12000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 12000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    animation-name: spin;
+    animation-duration: 12000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#circle2 {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-animation-name: spin-backwards;
+    -webkit-animation-duration: 20000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin-backwards;
+    -moz-animation-duration: 20000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin-backwards;
+    -ms-animation-duration: 20000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    animation-name: spin-backwards;
+    animation-duration: 20000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#circle3 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 20000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 20000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 20000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    animation-name: spin;
+    animation-duration: 20000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#circle4 {
+    position: absolute;
+    width: 750px;
+    height: 750px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-animation-name: spin-backwards;
+    -webkit-animation-duration: 20000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin-backwards;
+    -moz-animation-duration: 20000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin-backwards;
+    -ms-animation-duration: 20000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    animation-name: spin-backwards;
+    animation-duration: 20000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#circle5 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    opacity: 0.4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-animation-name: spin-backwards;
+    -webkit-animation-duration: 5000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin-backwards;
+    -moz-animation-duration: 5000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin-backwards;
+    -ms-animation-duration: 5000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    animation-name: spin-backwards;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#circle6 {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    opacity: 0.4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 7000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 7000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 7000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    animation-name: spin;
+    animation-duration: 7000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#circle7 {
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    opacity: 0.4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-animation-name: spin-backwards;
+    -webkit-animation-duration: 10000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin-backwards;
+    -moz-animation-duration: 10000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin-backwards;
+    -ms-animation-duration: 10000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    animation-name: spin-backwards;
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform:  translate(-50%, -50%) rotate(0deg) ; }
+    to { -moz-transform:  translate(-50%, -50%) rotate(360deg) ; }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform:  translate(-50%, -50%) rotate(0deg) ; }
+    to { -webkit-transform:   translate(-50%, -50%) rotate(360deg) ; }
+}
+@keyframes spin {
+    from {transform:  translate(-50%, -50%) rotate(0deg) ;}
+    to {transform:  translate(-50%, -50%) rotate(360deg) ;}
+}
+
+@-moz-keyframes spin-backwards {
+    from { -moz-transform:  translate(-50%, -50%) rotate(360deg) ; }
+    to { -moz-transform:  translate(-50%, -50%) rotate(0deg) ; }
+}
+@-webkit-keyframes spin-backwards {
+    from { -webkit-transform:  translate(-50%, -50%) rotate(360deg) ; }
+    to { -webkit-transform:   translate(-50%, -50%) rotate(0deg) ; }
+}
+@keyframes spin-backwards {
+    from {transform:  translate(-50%, -50%) rotate(360deg) ;}
+    to {transform:  translate(-50%, -50%) rotate(0deg) ;}
+}
+
+@media screen and (max-width: 1024px) {
+	* h1 {
+		max-width: 100% !important;
+	}
+    .top-bar {
+        padding: 0 1rem;
+    }
+    .page {
+        padding: calc(62px + 3rem) 1rem 1rem 1rem;
+        ul {
+            li {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1140px) {
+    .page {
+        ul {
+            li {
+                width: calc(100% / 3 - 2rem);
+            }
+        }
+    }
+}
+
+@function multiple-box-shadow($n) {
+    $value: "#{random(2000)}px #{random(2000)}px #FFF";
+  
+    @for $i from 2 through $n {
+      $value: "#{$value} , #{random(2000)}px #{random(2000)}px #FFF";
+    }
+  
+    @return unquote($value);
+  }
+  
+  $shadows-small: multiple-box-shadow(700);
+  $shadows-medium: multiple-box-shadow(200);
+  $shadows-big: multiple-box-shadow(100);
+
+#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+    animation: animStar 50s linear infinite;
+  
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      box-shadow: $shadows-small;
+    }
+  }
+  
+  #stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+    animation: animStar 100s linear infinite;
+  
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 2px;
+      height: 2px;
+      background: transparent;
+      box-shadow: $shadows-medium;
+    }
+  }
+  
+  #stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+    animation: animStar 150s linear infinite;
+  
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 3px;
+      height: 3px;
+      background: transparent;
+      box-shadow: $shadows-big;
+    }
+  }
+  
+  
+  @keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+  
+    to {
+      transform: translateY(-2000px);
+    }
+  }  
