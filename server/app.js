@@ -5,7 +5,8 @@ const path = require('path');
 
 const app = express();
 
-app.set('view engine', 'jade');
+// set the view engine to ejs
+app.set('view engine', 'ejs');
 
 // Setup logger
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
