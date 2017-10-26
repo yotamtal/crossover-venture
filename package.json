@@ -1,4 +1,11 @@
 {
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/quiet-retreat-48603.git"
+  },
+  "name": "crossover-venture",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
     "start": "webpack-dev-server",
     "build": "rm -rf ./dist && webpack --config webpack.config.dist.js -p"
