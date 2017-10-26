@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/'));
 
 // set the home page route
 app.get('/', function(req, res) {
-
+    res.render('index');
 });
 
 app.listen(port, function() {
