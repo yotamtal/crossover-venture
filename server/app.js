@@ -8,6 +8,8 @@ const app = express();
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
+app.engine('html', require('ejs').renderFile);
+
 // Setup logger
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
 
