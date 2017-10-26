@@ -1,13 +1,16 @@
 {
   "repository": {
     "type": "git",
-    "url": "https://git.heroku.com/quiet-retreat-48603.git"
+    "url": "https://git.heroku.com/crossover-venture.git"
   },
   "name": "crossover-venture",
+  "description": "Crossover Venture Web APP",
+  "main": "server.js",
   "version": "0.0.1",
-  "private": true,
+  "license": "UNLICENSED",
+  "private": false,
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server node server.js",
     "build": "rm -rf ./dist && webpack --config webpack.config.dist.js -p"
   },
   "devDependencies": {
@@ -44,6 +47,8 @@
     "react-dom": "^15.6.1",
     "react-hot-loader": "next",
     "react-router-dom": "^4.1.1",
-    "react-transition-group": "^1.2.0"
+    "react-transition-group": "^1.2.0",
+    "ejs": "~1.0.0",
+    "express": "~4.9.8"
   }
 }
