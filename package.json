@@ -12,7 +12,7 @@
   "scripts": {
     "start": "webpack-dev-server node ./server.js",
     "test": "webpack-dev-server",
-    "build": "babel src/ -d dist/ --presets=react"
+    "build": "babel src/ -d dist/ --presets=react && cp src/index.html dist/ && cp -R src/images/ dist/images/"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

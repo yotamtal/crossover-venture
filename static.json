@@ -1,6 +1,6 @@
 {
   "root": "dist/",
   "routes": {
-    "/**": "index.js"
+    "/**": "index.html"
   }
 }
