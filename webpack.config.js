@@ -15,7 +15,7 @@ module.exports = {
 	devServer: {
 		hot: true,
 		contentBase: resolve(__dirname, "dist"),
-		host: "0.0.0.0",
+		host: "localhost",
 		publicPath: `/`,
 		historyApiFallback: true,
 		disableHostCheck: true,
@@ -27,7 +27,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.js?$/,
+				test: /\.js|jsx?$/,
 				use: [
 					{
 						loader: "babel-loader",
@@ -40,7 +40,7 @@ module.exports = {
 							],
 							plugins: [
 								"react-hot-loader/patch",
-								"transform-decorators-legacy"
+								"transform-decorators-legacy",
 							]
 						}
 					}

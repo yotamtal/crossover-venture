@@ -17,9 +17,11 @@ import Gallery from "./gallery";
  * 
  * Tryout with 3D WebGL
  * 
+ * import Globe from "./globe";
+ * 
  */
 
-import Globe from "./globe";
+
 
 export default class App extends Component {
 	constructor(props) {
@@ -55,7 +57,6 @@ export default class App extends Component {
 							>
 								<Route exact path="/" component={Home} />
 								<Route exact path="/about" component={About} />
-								<Route exact path="/globe" component={Globe} />
 								<Route exact path="/contact" component={Contact} />
 								<Route
 									exact

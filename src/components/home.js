@@ -50,8 +50,7 @@ export default class Home extends Component {
 				<NavLink to="/contact">
 				<img id="circle1" /*className="mandalaLayer1"*/ src={require('../images/contact3.svg')}  />
 				</NavLink>
-				{/*<img id="main-mars" className="" src={require('../images/mars.svg')} width="200px" height="200px" />*/}
-				<div id="earth_div"></div>
+				<img id="main-mars" className="" src={require('../images/mars.svg')} width="200px" height="200px" />
 			</div>
 		);
 	}
